@@ -17,8 +17,7 @@
     "build-lib": "tsc --removeComments --outDir lib src/main.ts",
     "build-dist": "ncp lib/main.js dist/botbuilder-redis.js",
     "build-minify": "uglifyjs dist/botbuilder-redis.js -o dist/botbuilder-redis.min.js",
-    "tsc": "tsc",
-    "prepublish": "npm run build"
+    "tsc": "tsc"
   },
   "devDependencies": {
     "bluebird": "^3.4.1",
