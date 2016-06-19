@@ -2,6 +2,13 @@
 .gitignore
 .env
 .travis.yml
+npm-debug.log
 bower.json
 demo
 coverage
+.env
+src/*.js
+src/*.js.map
+test/*.js
+test/*.js.map
+typings

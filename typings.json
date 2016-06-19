@@ -1,0 +1,15 @@
+{
+  "globalDependencies": {
+    "empower": "registry:dt/empower#0.0.0+20160317120654",
+    "fakeredis": "file:typings-local/fakeredis.d.ts",
+    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160613154055",
+    "power-assert": "registry:dt/power-assert#0.0.0+20160316155526",
+    "power-assert-formatter": "registry:dt/power-assert-formatter#0.0.0+20160317120654"
+  },
+  "dependencies": {
+    "bluebird": "registry:npm/bluebird#3.3.4+20160531224558",
+    "botbuilder": "npm:botbuilder/lib/botbuilder.d.ts",
+    "redis": "registry:npm/redis#0.12.1+20160502170935"
+  }
+}

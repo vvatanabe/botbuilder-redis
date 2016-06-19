@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noEmitOnError": false,
+        "removeComments": false
+    },
+    "files": [
+        "./typings/index.d.ts",
+        "./dist/botbuilder-redis.d.ts",
+        "./src/main.ts",
+        "./test/test-main.ts"
+    ],
+    "exclude": [
+        "./node_modules"
+    ]
+}
