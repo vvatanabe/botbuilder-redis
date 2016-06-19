@@ -25,6 +25,7 @@
     "coveralls": "^2.11.9",
     "espower-typescript": "^5.0.1",
     "fakeredis": "^1.0.3",
+    "istanbul": "^0.4.3",
     "mocha": "^2.5.3",
     "ncp": "^2.0.0",
     "power-assert": "^1.4.1",
