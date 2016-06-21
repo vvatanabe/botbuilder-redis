@@ -1,10 +1,14 @@
 "use strict";
 var RedisStorage = (function () {
-    function RedisStorage(client) {
+    function RedisStorage(client, prefix) {
         this.client = client;
+        this.prefix = prefix;
     }
+    RedisStorage.prototype.createKey = function (id) {
+        return this.prefix ? this.prefix + ":" + id : id;
+    };
     RedisStorage.prototype.get = function (id, callback) {
-        this.client.get(id, function (err, data) {
+        this.client.get(this.createKey(id), function (err, data) {
             if (data) {
                 callback(null, JSON.parse(data));
             }
@@ -14,16 +18,17 @@ var RedisStorage = (function () {
         });
     };
     RedisStorage.prototype.save = function (id, data, callback) {
-        this.client.set(id, JSON.stringify(data || {}));
+        this.client.set(this.createKey(id), JSON.stringify(data || {}));
         if (callback) {
             callback(null);
         }
     };
     RedisStorage.prototype.delete = function (id, callback) {
         var _this = this;
-        this.client.get(id, function (err, data) {
+        var key = this.createKey(id);
+        this.client.get(key, function (err, data) {
             if (data) {
-                _this.client.del(id);
+                _this.client.del(key);
             }
             if (callback) {
                 callback(null);

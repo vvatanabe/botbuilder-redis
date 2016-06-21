@@ -8,3 +8,7 @@ coverage
 tmux-*.log
 .env
 typings
+src/*.js
+src/*.js.map
+test/*.js
+test/*.js.map

@@ -23,24 +23,22 @@ describe("main", () => {
     done();
   });
 
-  it("can be all...", done => {
-
+  it("can be storage", done => {
     const storage = new RedisStorage(fakeredis.createClient());
-
     const save = Promise.promisify<any, any, any>(storage.save, { context: storage });
     const get = Promise.promisify<any, any>(storage.get, { context: storage });
     const del = Promise.promisify<any, any>(storage.delete, { context: storage });
-
-    save('example-1', 123456)
+    assert('99999999' === storage.createKey('99999999'));
+    save('99999999', 123456)
       .then(() => {
-        return get('example-1');
+        return get('99999999');
       })
       .then((data) => {
         assert(123456 === data);
-        return del('example-1');
+        return del('99999999');
       })
       .then(() => {
-        return get('example-1');
+        return get('99999999');
       })
       .then((data) => {
         assert(null == data);
@@ -49,7 +47,32 @@ describe("main", () => {
       .catch((err) => {
         throw err;
       })
+  });
 
+  it("can be storage with prefix", done => {
+    const storage = new RedisStorage(fakeredis.createClient(), 'prefix');
+    const save = Promise.promisify<any, any, any>(storage.save, { context: storage });
+    const get = Promise.promisify<any, any>(storage.get, { context: storage });
+    const del = Promise.promisify<any, any>(storage.delete, { context: storage });
+    assert('prefix:99999999' === storage.createKey('99999999'));
+    save('99999999', 123456)
+      .then(() => {
+        return get('99999999');
+      })
+      .then((data) => {
+        assert(123456 === data);
+        return del('99999999');
+      })
+      .then(() => {
+        return get('99999999');
+      })
+      .then((data) => {
+        assert(null == data);
+        done();
+      })
+      .catch((err) => {
+        throw err;
+      })
   });
 
 });
