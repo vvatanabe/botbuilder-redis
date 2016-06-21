@@ -1,4 +1,4 @@
-# botbuilder-redis [![Build Status](https://travis-ci.org/vvatanabe/botbuilder-redis.svg?branch=master)](https://travis-ci.org/vvatanabe/botbuilder-redis) [![Coverage Status](https://coveralls.io/repos/github/vvatanabe/botbuilder-redis/badge.svg?branch=master)](https://coveralls.io/github/vvatanabe/botbuilder-redis?branch=master)
+# botbuilder-redis [![Build Status](https://travis-ci.org/vvatanabe/botbuilder-redis.svg?branch=master)](https://travis-ci.org/vvatanabe/botbuilder-redis) [![Coverage Status](https://coveralls.io/repos/github/vvatanabe/botbuilder-redis/badge.svg?branch=master)](https://coveralls.io/github/vvatanabe/botbuilder-redis?branch=master) [![npm version](https://badge.fury.io/js/botbuilder-redis.svg)](https://badge.fury.io/js/botbuilder-redis)
 
 Redis adapter for Microsoft BotBuilder.
 
