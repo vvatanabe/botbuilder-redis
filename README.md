@@ -13,12 +13,12 @@ const RedisStorage = require('botbuilder-redis');
 const redis = require('redis');
 const client = redis.createClient();
 
-const userStore = new RedisStorage(client);
-const sessionStore = new RedisStorage(client);
+const userStore = new RedisStorage(client, 'user');
+const sessionStore = new RedisStorage(client, 'session');
 
 const bot = new builder.TextBot({
-  userStore: userStore;
-  sessionStore: sessionStore;  
+  userStore: userStore,
+  sessionStore: sessionStore  
 })
 
 bot.add('/', new builder.CommandDialog().matches('bye', session => {
@@ -29,8 +29,6 @@ bot.listen()
 ```
 
 ## Install
-
-### coming soon...
 
 ``` sh
 $ npm install --save botbuilder-redis redis
