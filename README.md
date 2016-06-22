@@ -4,7 +4,6 @@ Redis adapter for Microsoft BotBuilder.
 
 ## Usage
 
-##### ./greet-bot.js:
 ``` javascript
 'use strict'
 
